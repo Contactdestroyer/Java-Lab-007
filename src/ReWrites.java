@@ -8,10 +8,11 @@ class ReWrites {
         double sum = 0.0;
         int count = 0;
         System.out.println("Ths program will calculate the average of numbers entered. Begin entering and enter \"Q\" to quit.");
-        while(!(l = s.nextLine()).toUpperCase().equals("Q")) {
+//        while(!(l = s.nextLine()).toUpperCase().equals("Q")) {
+        for( ;!((l = s.nextLine()).toUpperCase().equals("Q")); count++){
             try {
                 sum += Integer.parseInt(l);
-                count++;
+//                count++;
             } catch (NumberFormatException nfe) {}
         }
 
@@ -22,13 +23,13 @@ class ReWrites {
         System.out.println("Type positive integers to sum. To stop, type 0...");
         int x = -1;
         int sum = 0;
-
-        while (true) {
+        int i = 0;
+        while (i == 0) {
             try {
-                if(x == 0) {
-                    break;
-                }
                 x = Integer.parseInt(in.nextLine());
+                if(x == 0) {
+                    i = 1;
+                }
                 if (x <= 0) {
                     continue;
                 }
